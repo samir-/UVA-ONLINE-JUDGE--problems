@@ -20,9 +20,9 @@ void coloring_BFS(){
         for (int i = 0; i< adj[temp].size(); i++) {
             if( color[adj[temp][i]]==-1) {
                 q.push(adj[temp][i]);
-                color[adj[temp][i]]=(color[temp]+1)%2;
+                color[adj[temp][i]]=1-color[temp];
             }
-            else if( color[adj[temp][i]]!=(color[temp]+1)%2) {
+            else if( color[adj[temp][i]]!=1-color[temp]) {
                 cout<<"NOT BICOLORABLE."<<endl;
                 
                 return;
